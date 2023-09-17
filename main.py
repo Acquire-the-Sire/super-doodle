@@ -39,9 +39,16 @@ print("Available Sellers:")
 for i in seller_list:
     print(i)
 seller_search = input("Enter the name of the seller:\n")
-seller_search.casefold()
-seller_search.capitalize()
+seller_search = seller_search.casefold()
+seller_search = seller_search.capitalize()
 if seller_search not in seller_list:
     print("This seller is unavailable.")
 else:
     print("Sales report for " + seller_search + ":")
+    seller_total = 0
+    for i in data:
+        if i['seller'] == seller_search:
+            print("Product: " + i['product'] + ", Quantity: " + i['quantity'] + ", Price: $" + i['price'] + ", Total: $"
+                  + i['quantity'] * i['product'])
+            seller_total += i['quantity'] * i['product']
+    print("Total sales for " + seller_search + ": $" + seller_total)
