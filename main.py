@@ -51,4 +51,4 @@ else:
             print("Product: %s, Quantity: %d, Price: $%.2f, Total: $%.2f" % (i['product'], i['quantity'], i['price'],
                                                                              i['price'] * i['quantity']))
             seller_total += i['quantity'] * i['price']
-    print("Total sales for %s: $%.2f" % (i['seller'], seller_total))
+    print("Total sales for %s: $%.2f" % (seller_search, seller_total))
