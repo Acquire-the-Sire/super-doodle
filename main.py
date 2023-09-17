@@ -48,7 +48,7 @@ else:
     seller_total = 0
     for i in data:
         if i['seller'] == seller_search:
-            print("Product: " + i['product'] + ", Quantity: " + i['quantity'] + ", Price: $" + i['price'] + ", Total: $"
-                  + i['quantity'] * i['product'])
-            seller_total += i['quantity'] * i['product']
-    print("Total sales for " + seller_search + ": $" + seller_total)
+            print("Product: %s, Quantity: %d, Price: $%.2f, Total: $%.2f" % (i['product'], i['quantity'], i['price'],
+                                                                             i['price'] * i['quantity']))
+            seller_total += i['quantity'] * i['price']
+    print("Total sales for %s: $%.2f" % (i['seller'], seller_total))
